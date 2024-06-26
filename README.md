@@ -37,7 +37,7 @@ This repository contains the Project Management built using Django and Django RE
    ```sh
    http://127.0.0.1:8000/admin/
 
-### Postman Collection
+### Accessing REST API Endpoints
 To facilitate API testing, a Postman collection and environment are provided in the Postman_API folder.
 
 #### Setting Up Postman
