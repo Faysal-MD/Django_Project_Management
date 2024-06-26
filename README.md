@@ -1,6 +1,6 @@
 # Django_Project_Management
 
-This is a Django project that utilizes Django REST Framework (DRF) for handling authentication. The project includes endpoints for user registration, login, and profile management.
+This repository contains the Project Management built using Django and Django REST Framework. The API provides endpoints for user registration, authentication, and managing projects, tasks, and comments.
 
 ### Setup
 
