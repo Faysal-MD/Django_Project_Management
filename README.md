@@ -43,7 +43,7 @@ To facilitate API testing, a Postman collection and environment are provided in 
 #### Setting Up Postman
    1. Import the Postman collection and environment:
       - Go to Postman and click on Import.
-      - Select the ProjectManagementCollections.postman_collection.json file from the Postman_API_Report folder.
+      - Select the ProjectManagementCollections.postman_collection.json file from the Postman_API folder.
       - Import the ProjectManagementEnv.postman_environment.json file from the same folder.
    
    2. Set the environment:
@@ -62,13 +62,13 @@ To facilitate API testing, a Postman collection and environment are provided in 
 ##### Running Tests
 1. Run the collection using Newman:
    ```sh
-   newman run Postman_API_Report/ProjectManagementCollections.postman_collection.json -e Postman_API_Report/ProjectManagementEnv.postman_environment.json -r cli,html --reporter-html-export=Postman_API_Report/report.html
+   newman run Postman_API/ProjectManagementCollections.postman_collection.json -e Postman_API/ProjectManagementEnv.postman_environment.json -r cli,html --reporter-html-export=Postman_API/report.html
 
-This command will execute the collection and generate a report in the Postman_API_Report folder.
+This command will execute the collection and generate a report in the Postman_API folder.
    
 ##### Viewing Reports
 1. Open the report:
-   - Navigate to the Postman_API_Report folder and open the .html file in a web browser to view the test results.
+   - Navigate to the Postman_API folder and open the .html file in a web browser to view the test results.
 
 ### Folder Structure
 ```sh
