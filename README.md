@@ -4,7 +4,7 @@ This repository contains the Project Management built using Django and Django RE
 
 
 
-### Setup
+### Setup the Backend
 
 1. Clone the repository:
    ```sh
