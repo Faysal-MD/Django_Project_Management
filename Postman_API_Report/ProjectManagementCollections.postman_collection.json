@@ -1,0 +1,649 @@
+{
+	"info": {
+		"_postman_id": "f15d6cb4-c8dc-4850-be51-66e3ddf649a6",
+		"name": "ProjectManagementCollections",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30256554"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Register User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"Testuser3\",\r\n    \"email\": \"test3@gmail.com\",\r\n    \"password\": \"123\",\r\n    \"password2\": \"123\",\r\n    \"first_name\": \"test\",\r\n    \"last_name\": \"user3\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/users/register/",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"register",
+								""
+							]
+						},
+						"description": "**Endpoint:** `POST /api/users/register/`\n\n**Description:** Create a new user"
+					},
+					"response": []
+				},
+				{
+					"name": "Login User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"test\",\r\n    \"password\": \"123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/users/login/",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"login",
+								""
+							]
+						},
+						"description": "**Endpoint:** `POST /api/users/login/`\n\n**Description:** Authenticate a user and return a token\n\n**Note:** After successful login, you will receive a token. For each subsequent operation, add this token to the request headers.\n\n### Authorization\n\nFor all operations except user registration, add the following header:\n\n- **Key:** Authorization\n    \n- **Value:** Token `your_token_here`"
+					},
+					"response": []
+				},
+				{
+					"name": "Get User",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token 5e574780ea2979193696af7d76009647765e5b5e",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}/api/users/21/",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"21",
+								""
+							]
+						},
+						"description": "**Endpoint:** `GET /api/users/{id}/`\n\n**Description:** Retrieve details of a specific user\n\n**Headers:** Authorization: Token `your_token_here`"
+					},
+					"response": []
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token 5e574780ea2979193696af7d76009647765e5b5e",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"Testuser\",\r\n    \"email\": \"test@gmail.com\",\r\n    \"first_name\": \"Test\",\r\n    \"last_name\": \"User\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/users/27/",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"27",
+								""
+							]
+						},
+						"description": "**Endpoint:** `GET /api/users/{id}/`\n\n**Description:** Retrieve details of a specific user\n\n**Headers:** Authorization: Token `your_token_here`"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token 199b4dbbd9c13c0b468657732a425ef986784b38",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}/api/users/25/",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"25",
+								""
+							]
+						},
+						"description": "**Endpoint:** `DELETE /api/users/{id}/`\n\n**Description:** Delete a user account\n\n**Headers:** Authorization: Token `your_token_here`"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Projects",
+			"item": [
+				{
+					"name": "List Projects",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token 5e574780ea2979193696af7d76009647765e5b5e",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}/api/projects/",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"projects",
+								""
+							]
+						},
+						"description": "**Endpoint:** `GET /api/projects/`  \n**Description:** Retrieve a list of all projects\n\n**Headers:** Authorization: Token `your_token_here`"
+					},
+					"response": []
+				},
+				{
+					"name": "Create Project",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token 41e15f4588373061b23a6cf6c1c8ba9d870fca73",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Delete Project\",\r\n  \"description\": \"A company, TeamCollab, is building a project management tool that allows teams to collaborate on projects. The tool needs an API to manage users, projects, tasks, and comments. The API will be consumed by their front-end web application and mobile application.\",\r\n  \"owner\": 21\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/projects/",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"projects",
+								""
+							]
+						},
+						"description": "**Endpoint:** `POST /api/projects/`\n\n**Description:** Create a new project\n\n**Headers:** Authorization: Token `your_token_here`"
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve Project",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token 41e15f4588373061b23a6cf6c1c8ba9d870fca73",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}/api/projects/9/",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"projects",
+								"9",
+								""
+							]
+						},
+						"description": "**Endpoint:** `GET /api/projects/{id}/`\n\n**Description:** Retrieve details of a specific project\n\n**Headers:** Authorization: Token `your_token_here`"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Project",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token 41e15f4588373061b23a6cf6c1c8ba9d870fca73",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Delete application\",\r\n  \"description\": \"A company, TeamCollab, is building a project management tool that allows teams to collaborate on projects. The tool needs an API to manage users, projects, tasks, and comments. The API will be consumed by their front-end web application and mobile application.\",\r\n  \"owner\": 21\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/projects/9/",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"projects",
+								"9",
+								""
+							]
+						},
+						"description": "**Endpoint:** `PUT /api/projects/{id}/`\n\n**Description:** Update project details\n\n**Headers:** Authorization: Token `your_token_here`"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Project",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token 41e15f4588373061b23a6cf6c1c8ba9d870fca73",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/projects/9/",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"projects",
+								"9",
+								""
+							]
+						},
+						"description": "**Endpoint:** `DELETE /api/projects/{id}/`\n\n**Description:** Delete a project\n\n**Headers:** Authorization: Token `your_token_here`"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tasks",
+			"item": [
+				{
+					"name": "List Tasks",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token f7113975b0e206985145d1e96e626ee570da00f6",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}/api/projects/8/tasks",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"projects",
+								"8",
+								"tasks"
+							]
+						},
+						"description": "**Endpoint:** `GET /api/projects/{project_id}/tasks/`\n\n**Description:** Retrieve a list of all tasks in a project\n\n**Headers:** Authorization: Token `your_token_here`"
+					},
+					"response": []
+				},
+				{
+					"name": "Create Task",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token 41e15f4588373061b23a6cf6c1c8ba9d870fca73",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"Model Design\",\r\n  \"description\": \"Design Database Schema and Design the Restful API.\",\r\n  \"status\": \"Done\",\r\n  \"priority\": \"High\",\r\n  \"assigned_to\": 21,\r\n  \"project\": 8,\r\n  \"due_date\": \"2024-06-26\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/projects/8/tasks/",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"projects",
+								"8",
+								"tasks",
+								""
+							]
+						},
+						"description": "**Endpoint:** `POST /api/projects/{project_id}/tasks/`\n\n**Description:** Create a new task in a project\n\n**Headers:** Authorization: Token `your_token_here`"
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve Task",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token 41e15f4588373061b23a6cf6c1c8ba9d870fca73",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}/api/tasks/7/",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"tasks",
+								"7",
+								""
+							]
+						},
+						"description": "**Endpoint:** `GET /api/tasks/{id}/`\n\n**Description:** Retrieve details of a specific task\n\n**Headers:** Authorization: Token `your_token_here`"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Task",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token 41e15f4588373061b23a6cf6c1c8ba9d870fca73",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"title\": \"Models Designs\",\r\n        \"description\": \"Design Database Schema and Design the Restful API.\",\r\n        \"status\": \"Done\",\r\n        \"priority\": \"High\",\r\n        \"created_at\": \"2024-06-26T06:29:23.417423Z\",\r\n        \"due_date\": \"2024-06-26T00:00:00Z\",\r\n        \"assigned_to\": 21,\r\n        \"project\": 8\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/tasks/8/",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"tasks",
+								"8",
+								""
+							]
+						},
+						"description": "**Endpoint:** `PUT /api/tasks/{id}/`  \n**Description:** Update task details\n\n**Headers:** Authorization: Token `your_token_here`"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Task",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token 41e15f4588373061b23a6cf6c1c8ba9d870fca73",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}/api/tasks/7/",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"tasks",
+								"7",
+								""
+							]
+						},
+						"description": "**Endpoint:** `DELETE /api/tasks/{id}/`\n\n**Description:** Delete a task\n\n**Headers:** Authorization: Token `your_token_here`"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Comments",
+			"item": [
+				{
+					"name": "List Comments",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token 41e15f4588373061b23a6cf6c1c8ba9d870fca73",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}/api/tasks/3/comments/",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"tasks",
+								"3",
+								"comments",
+								""
+							]
+						},
+						"description": "**Endpoint:** `GET /api/tasks/{task_id}/comments/`\n\n**Description:** Retrieve a list of all comments on a task\n\n**Headers:** Authorization: Token `your_token_here`"
+					},
+					"response": []
+				},
+				{
+					"name": "Create Comment",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token 41e15f4588373061b23a6cf6c1c8ba9d870fca73",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"content\": \"Nothing to comment.\",\r\n  \"user\": 21,\r\n  \"task\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/tasks/3/comments/",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"tasks",
+								"3",
+								"comments",
+								""
+							]
+						},
+						"description": "**Endpoint:** `POST /api/tasks/{task_id}/comments/`\n\n**Description:** Create a new comment on a task\n\n**Headers:** Authorization: Token `your_token_here`"
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve Comment",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token 41e15f4588373061b23a6cf6c1c8ba9d870fca73",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}/api/comments/2/",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"comments",
+								"2",
+								""
+							]
+						},
+						"description": "**Endpoint:** `GET /api/comments/{id}/`  \n**Description:** Retrieve details of a specific comment\n\n**Headers:** Authorization: Token `your_token_here`"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Comment",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token 41e15f4588373061b23a6cf6c1c8ba9d870fca73",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 2,\r\n    \"content\": \"Implement authentication using Django REST Framework or Simple JWT.\",\r\n    \"created_at\": \"2024-06-26T04:58:45.545026Z\",\r\n    \"user\": 21,\r\n    \"task\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/comments/2/",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"comments",
+								"2",
+								""
+							]
+						},
+						"description": "**Endpoint:** `PUT /api/comments/{id}/`\n\n**Description:** Update comment details\n\n**Headers:** Authorization: Token `your_token_here`"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Comment",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token 41e15f4588373061b23a6cf6c1c8ba9d870fca73",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}/api/comments/4/",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"comments",
+								"4",
+								""
+							]
+						},
+						"description": "**Endpoint:** `DELETE /api/comments/{id}/`\n\n**Description:** Delete a comment\n\n**Headers:** Authorization: Token `your_token_here`"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
