@@ -3,7 +3,7 @@
 This repository contains the Project Management built using Django and Django REST Framework. The API provides endpoints for user registration, authentication, and managing projects, tasks, and comments.
 
 ### Folder Structure
-```shell
+```sh
 Django_Project_Management/
 ├── Project_Management/
 │ ├── manage.py
