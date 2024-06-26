@@ -2,6 +2,19 @@
 
 This repository contains the Project Management built using Django and Django REST Framework. The API provides endpoints for user registration, authentication, and managing projects, tasks, and comments.
 
+### Folder Structure
+```shell
+Django_Project_Management/
+├── Project_Management/
+│ ├── manage.py
+│ ├── Project_app/
+│ └── ... (other Django project files)
+├── Postman_API/
+│ ├── ProjectManagementCollections.postman_collection.json
+│ ├── ProjectManagementEnv.postman_environment.json
+│ └── report.html
+└── README.md
+
 ### Setup
 
 1. Clone the repository:
@@ -66,15 +79,4 @@ This command will execute the collection and generate a report in the Postman_AP
    - Navigate to the Postman_API_Report folder and open the .html file in a web browser to view the test results.
 
 
-### Folder Structure
-```shell
-Django_Project_Management/
-├── Project_Management/
-│ ├── manage.py
-│ ├── Project_app/
-│ └── ... (other Django project files)
-├── Postman_API/
-│ ├── ProjectManagementCollections.postman_collection.json
-│ ├── ProjectManagementEnv.postman_environment.json
-│ └── report.html
-└── README.md
+
