@@ -32,3 +32,36 @@ This repository contains the Project Management built using Django and Django RE
    ```sh
    python manage.py runserver
 
+### Postman Collection
+To facilitate API testing, a Postman collection and environment are provided in the Postman_API folder.
+
+#### Setting Up Postman
+   1. Import the Postman collection and environment:
+      - Go to Postman and click on Import.
+      - Select the ProjectManagementCollections.postman_collection.json file from the Postman_API_Report folder.
+      - Import the ProjectManagementEnv.postman_environment.json file from the same folder.
+   
+   2. Set the environment:
+       - In Postman, select the ProjectManagementEnv environment..
+   
+   3. Run the requests:
+      - Use the provided requests in the collection to interact with the API.
+        
+#### Running Tests with Newman
+   Newman is a command-line tool to run Postman collections.
+
+##### Installation
+1. Install Newman:
+   ```sh
+   npm install -g newman
+##### Running Tests
+1. Run the collection using Newman:
+   ```sh
+   newman run Postman_API_Report/ProjectManagementCollections.postman_collection.json -e Postman_API_Report/ProjectManagementEnv.postman_environment.json -r cli,html --reporter-html-export=Postman_API_Report/report.html
+
+This command will execute the collection and generate a report in the Postman_API_Report folder.
+   
+##### Viewing Reports
+1. Open the report:
+   - Navigate to the Postman_API_Report folder and open the .html file in a web browser to view the test results.
+
