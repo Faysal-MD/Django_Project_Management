@@ -37,7 +37,7 @@ This repository contains the Project Management built using Django and Django RE
    ```sh
    http://127.0.0.1:8000/admin/
 
-### Accessing REST API Endpoints
+### REST API Documentation
 To facilitate API testing, a Postman collection and environment are provided in the Postman_API folder.
 
 #### Setting Up Postman
@@ -64,11 +64,13 @@ To facilitate API testing, a Postman collection and environment are provided in 
    ```sh
    newman run Postman_API/ProjectManagementCollections.postman_collection.json -e Postman_API/ProjectManagementEnv.postman_environment.json -r cli,html --reporter-html-export=Postman_API/report.html
 
-This command will execute the collection and generate a report in the Postman_API folder.
+This command will execute the collection and generate a report in the Postman_API/newman folder.
    
 ##### Viewing Reports
 1. Open the report:
-   - Navigate to the Postman_API folder and open the .html file in a web browser to view the test results.
+   - Navigate to the Postman_API/newman folder and open the report.html file in a web browser to view the detailed API documentation.
+  
+
 
 ### Folder Structure
 ```sh
