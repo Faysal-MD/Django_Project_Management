@@ -2,41 +2,44 @@ from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from django.shortcuts import get_object_or_404
-from .models import User, Project, Task, Comment
-from .serializers import UserSerializer, ProjectSerializer, TaskSerializer, CommentSerializer
+from .models import Project, Task, Comment
+from .serializers import ProjectSerializer, TaskSerializer, CommentSerializer
+from rest_framework.permissions import IsAuthenticated
 
-class UserRegister(APIView):
-    def post(self, request):
-        serializer = UserSerializer(data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+# class UserRegister(APIView):
+#     def post(self, request):
+#         serializer = UserSerializer(data=request.data)
+#         if serializer.is_valid():
+#             serializer.save()
+#             return Response(serializer.data, status=status.HTTP_201_CREATED)
+#         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-class UserLogin(APIView):
-    # Implement user authentication and token generation here
-    pass
+# class UserLogin(APIView):
+#     # Implement user authentication and token generation here
+#     pass
 
-class UserDetail(APIView):
-    def get(self, request, pk):
-        user = get_object_or_404(User, pk=pk)
-        serializer = UserSerializer(user)
-        return Response(serializer.data)
+# class UserDetail(APIView):
+#     def get(self, request, pk):
+#         user = get_object_or_404(User, pk=pk)
+#         serializer = UserSerializer(user)
+#         return Response(serializer.data)
 
-    def put(self, request, pk):
-        user = get_object_or_404(User, pk=pk)
-        serializer = UserSerializer(user, data=request.data, partial=True)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+#     def put(self, request, pk):
+#         user = get_object_or_404(User, pk=pk)
+#         serializer = UserSerializer(user, data=request.data, partial=True)
+#         if serializer.is_valid():
+#             serializer.save()
+#             return Response(serializer.data)
+#         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-    def delete(self, request, pk):
-        user = get_object_or_404(User, pk=pk)
-        user.delete()
-        return Response(status=status.HTTP_204_NO_CONTENT)
+#     def delete(self, request, pk):
+#         user = get_object_or_404(User, pk=pk)
+#         user.delete()
+#         return Response(status=status.HTTP_204_NO_CONTENT)
 
 class ProjectListCreate(APIView):
+    permission_classes = [IsAuthenticated]
+
     def get(self, request):
         projects = Project.objects.all()
         serializer = ProjectSerializer(projects, many=True)
@@ -50,6 +53,8 @@ class ProjectListCreate(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 class ProjectDetail(APIView):
+    # permission_classes = [IsAuthenticated]
+
     def get(self, request, pk):
         project = get_object_or_404(Project, pk=pk)
         serializer = ProjectSerializer(project)
@@ -69,6 +74,7 @@ class ProjectDetail(APIView):
         return Response(status=status.HTTP_204_NO_CONTENT)
 
 class TaskListCreate(APIView):
+    permission_classes = [IsAuthenticated]
     def get(self, request, project_id):
         tasks = Task.objects.filter(project_id=project_id)
         serializer = TaskSerializer(tasks, many=True)
@@ -84,6 +90,7 @@ class TaskListCreate(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 class TaskDetail(APIView):
+    permission_classes = [IsAuthenticated]
     def get(self, request, pk):
         task = get_object_or_404(Task, pk=pk)
         serializer = TaskSerializer(task)
@@ -103,6 +110,7 @@ class TaskDetail(APIView):
         return Response(status=status.HTTP_204_NO_CONTENT)
 
 class CommentListCreate(APIView):
+    permission_classes = [IsAuthenticated]
     def get(self, request, task_id):
         comments = Comment.objects.filter(task_id=task_id)
         serializer = CommentSerializer(comments, many=True)
@@ -118,6 +126,7 @@ class CommentListCreate(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 class CommentDetail(APIView):
+    permission_classes = [IsAuthenticated]
     def get(self, request, pk):
         comment = get_object_or_404(Comment, pk=pk)
         serializer = CommentSerializer(comment)
