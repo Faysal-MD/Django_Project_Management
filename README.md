@@ -7,12 +7,11 @@ This repository contains the Project Management built using Django and Django RE
 ### Setup
 
 1. Clone the repository:
-
    ```sh
-   git clone https://github.com/Faysal-MD/Django_Project_Management.git
+   git clone https://github.com/user_name/Django_Project_Management.git
    cd Project_Management
+   
 2. Create a virtual environment and activate it:
-
    ```sh
    python3 -m venv venv
    source venv/Scripts/activate  # On Windows use `venv\Scripts\activate`
@@ -33,6 +32,10 @@ This repository contains the Project Management built using Django and Django RE
 6. Run the development server:
    ```sh
    python manage.py runserver
+
+7. Go to the browser and click:
+   ```sh
+   http://127.0.0.1:8000/admin/
 
 ### Postman Collection
 To facilitate API testing, a Postman collection and environment are provided in the Postman_API folder.
