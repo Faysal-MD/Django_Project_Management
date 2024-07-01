@@ -13,8 +13,8 @@ This repository contains the Project Management built using Django and Django RE
    
 2. Create a virtual environment and activate it:
    ```sh
-   python3 -m venv venv
-   source venv/Scripts/activate  # On Windows use `venv\Scripts\activate`
+   python -m venv venv
+   source venv/Scripts/activate  
 
 3. Install the required packages:
    ```sh
